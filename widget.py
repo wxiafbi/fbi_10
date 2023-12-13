@@ -15,8 +15,10 @@ class Widget(QWidget):
         super().__init__(parent)
         self.ui = Ui_Widget()
         self.ui.setupUi(self)
-        self.ui.lcdNumber.display(100)
+        self.ui.lcdNumber.display(9)
         self.ui.pushButton.setStyleSheet(u"background-color: #9400D3;")
+
+        
 
     def red(self):
         a = self.ui.lcdNumber.intValue()
