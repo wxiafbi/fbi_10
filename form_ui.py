@@ -26,7 +26,7 @@ class Ui_Widget(object):
         self.pushButton = QPushButton(Widget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(100, 60, 181, 51))
-        
+        self.pushButton.setStyleSheet(u"background-color: rgb(162, 255, 41);")
         self.lcdNumber = QLCDNumber(Widget)
         self.lcdNumber.setObjectName(u"lcdNumber")
         self.lcdNumber.setGeometry(QRect(440, 60, 131, 51))
@@ -42,6 +42,9 @@ class Ui_Widget(object):
         self.subwindow = QWidget()
         self.subwindow.setObjectName(u"subwindow")
         self.mdiArea.addSubWindow(self.subwindow)
+        self.lcdNumber_2 = QLCDNumber(Widget)
+        self.lcdNumber_2.setObjectName(u"lcdNumber_2")
+        self.lcdNumber_2.setGeometry(QRect(260, 210, 271, 51))
 
         self.retranslateUi(Widget)
         self.pushButton_2.clicked.connect(Widget.add)
