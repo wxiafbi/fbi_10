@@ -44,7 +44,7 @@ class Ui_Widget(object):
         self.mdiArea.addSubWindow(self.subwindow)
         self.lcdNumber_2 = QLCDNumber(Widget)
         self.lcdNumber_2.setObjectName(u"lcdNumber_2")
-        self.lcdNumber_2.setGeometry(QRect(260, 210, 271, 51))
+        self.lcdNumber_2.setGeometry(QRect(260, 210, 431, 51))
 
         self.retranslateUi(Widget)
         self.pushButton_2.clicked.connect(Widget.add)
