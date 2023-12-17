@@ -130,10 +130,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Widget</receiver>
+   <slot>slot1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>signal1()</signal>
   <slot>add()</slot>
   <slot>red()</slot>
+  <slot>slot1()</slot>
  </slots>
 </ui>

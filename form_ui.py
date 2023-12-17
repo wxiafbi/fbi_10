@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'form.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.4.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -49,6 +49,7 @@ class Ui_Widget(object):
         self.retranslateUi(Widget)
         self.pushButton_2.clicked.connect(Widget.add)
         self.pushButton_3.clicked.connect(Widget.red)
+        self.pushButton.clicked.connect(Widget.slot1)
 
         QMetaObject.connectSlotsByName(Widget)
     # setupUi
