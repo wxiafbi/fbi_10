@@ -1,44 +1,34 @@
-import sys
-from PySide6 import QtWidgets, QtGui
-import pandas as pd
-
-class App(QtWidgets.QApplication):
-    def __init__(self, sys_argv):
-        super().__init__(sys_argv)
-        self.window = Window()
-        self.exit()
-
-    def exit(self):
-        self.exit_loop = True
-
-class Window(QtWidgets.QWidget):
+import time
+from PySide6.QtWidgets import QApplication, QWidget, QTextEdit, QPushButton
+class TextEdit(QWidget):
     def __init__(self):
-        super().__init__()
-        self.initUI()
-
-    def initUI(self):
-        # 创建表格
-        self.table_view = QtWidgets.QTableView()
-        # 读取Excel数据
-        data = pd.read_excel('实时数据.xlsx')
-        # 创建模型
-        model = QtGui.QStandardItemModel(data.shape[0], data.shape[1])
-        for index, row in data.iterrows():
-            for col, value in row.items():
-                model.setData(model.index(index, col), str(value))
-        self.table_view.setModel(model)
-        # 设置表格显示的列数
-        self.table_view.setColumnCount(data.shape[1])
-        # 设置表格的显示样式
-        self.table_view.setAlternatingRowColors(True)
-        self.table_view.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
-        self.table_view.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
-        # 将表格添加到布局中
-        layout = QtWidgets.QVBoxLayout(self)
-        layout.addWidget(self.table_view)
-        # 显示窗口
+        super(TextEdit, self).__init__()
+        self.setWindowTitle("QTextEdit")
+        self.setGeometry(300, 300, 500, 300)
+        self.UI()
+    def UI(self):
+        self.tedit = QTextEdit(self)
+        self.tedit.setGeometry(10, 10, 200, 100)
+        self.tedit.setText("公众号：测个der")
+        self.btn = QPushButton("清空tedit", self)
+        self.btn.clicked.connect(self.tedit_clear)
+        self.btn.setGeometry(220, 10, 70, 30)
+        self.tedit_1 = QTextEdit(self)
+        self.tedit_1.setPlaceholderText("这里展示微信号")  # clear无法清除，提示作用
+        self.tedit_1.setGeometry(10, 120, 200, 100)
+        self.btn_1 = QPushButton("插入tedit_1", self)
+        self.btn_1.clicked.connect(self.tedit_1_insert)
+        self.btn_1.setGeometry(220, 120, 70, 30)
         self.show()
-
+    def tedit_clear(self):
+        self.tedit.clear()  # 清除文本
+        time.sleep(1)
+        self.tedit.append("我是清安")     # 添加文本
+    def tedit_1_insert(self):
+        self.tedit_1.setFontPointSize(20)   # 设置文本大小
+        self.tedit_1.setFontFamily("华文隶书")  # 设置字体
+        self.tedit_1.insertPlainText("V: qing_an_an")   # 插入纯文本
 if __name__ == '__main__':
-    app = App(sys.argv)
-    sys.exit(app.exec_())
+    app = QApplication([])
+    edit = TextEdit()
+    app.exec()

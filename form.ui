@@ -13,63 +13,11 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>0</y>
-     <width>151</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(162, 255, 41);</string>
-   </property>
-   <property name="text">
-    <string>查询</string>
-   </property>
-  </widget>
-  <widget class="QLCDNumber" name="lcdNumber">
-   <property name="geometry">
-    <rect>
-     <x>900</x>
-     <y>30</y>
-     <width>131</width>
-     <height>51</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>30</y>
-     <width>75</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>自增</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>60</y>
-     <width>75</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>自减</string>
-   </property>
-  </widget>
   <widget class="QLCDNumber" name="lcdNumber_2">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>0</y>
+     <x>610</x>
+     <y>40</y>
      <width>411</width>
      <height>31</height>
     </rect>
@@ -85,16 +33,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>161</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
@@ -104,6 +42,52 @@
      <height>521</height>
     </rect>
    </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>421</width>
+     <height>87</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(162, 255, 41);</string>
+      </property>
+      <property name="text">
+       <string>查询</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>自增</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>自减</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLCDNumber" name="lcdNumber"/>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
@@ -115,8 +99,8 @@
    <slot>add()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>673</x>
-     <y>70</y>
+     <x>225</x>
+     <y>44</y>
     </hint>
     <hint type="destinationlabel">
      <x>726</x>
@@ -131,8 +115,8 @@
    <slot>red()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>682</x>
-     <y>106</y>
+     <x>225</x>
+     <y>83</y>
     </hint>
     <hint type="destinationlabel">
      <x>727</x>
@@ -147,8 +131,8 @@
    <slot>slot1()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>80</x>
-     <y>19</y>
+     <x>117</x>
+     <y>60</y>
     </hint>
     <hint type="destinationlabel">
      <x>87</x>
