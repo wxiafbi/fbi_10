@@ -16,7 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QHeaderView, QLCDNumber,
-    QPushButton, QSizePolicy, QTableView, QWidget)
+    QPushButton, QSizePolicy, QTableView, QTextBrowser,
+    QWidget)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -25,7 +26,7 @@ class Ui_Widget(object):
         Widget.resize(1045, 641)
         self.pushButton = QPushButton(Widget)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(0, 0, 151, 31))
+        self.pushButton.setGeometry(QRect(160, 0, 151, 31))
         self.pushButton.setStyleSheet(u"background-color: rgb(162, 255, 41);")
         self.lcdNumber = QLCDNumber(Widget)
         self.lcdNumber.setObjectName(u"lcdNumber")
@@ -41,10 +42,13 @@ class Ui_Widget(object):
         self.lcdNumber_2.setGeometry(QRect(630, 0, 411, 31))
         self.tableView = QTableView(Widget)
         self.tableView.setObjectName(u"tableView")
-        self.tableView.setGeometry(QRect(10, 110, 1021, 521))
+        self.tableView.setGeometry(QRect(10, 110, 821, 521))
         self.comboBox = QComboBox(Widget)
         self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setGeometry(QRect(150, 0, 161, 31))
+        self.comboBox.setGeometry(QRect(0, 0, 161, 31))
+        self.textBrowser = QTextBrowser(Widget)
+        self.textBrowser.setObjectName(u"textBrowser")
+        self.textBrowser.setGeometry(QRect(840, 110, 201, 521))
 
         self.retranslateUi(Widget)
         self.pushButton_2.clicked.connect(Widget.add)
@@ -56,7 +60,7 @@ class Ui_Widget(object):
 
     def retranslateUi(self, Widget):
         Widget.setWindowTitle(QCoreApplication.translate("Widget", u"Widget", None))
-        self.pushButton.setText(QCoreApplication.translate("Widget", u"PushButton", None))
+        self.pushButton.setText(QCoreApplication.translate("Widget", u"\u67e5\u8be2", None))
         self.pushButton_2.setText(QCoreApplication.translate("Widget", u"\u81ea\u589e", None))
         self.pushButton_3.setText(QCoreApplication.translate("Widget", u"\u81ea\u51cf", None))
     # retranslateUi

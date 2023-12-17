@@ -72,10 +72,10 @@ class Widget(QWidget):
         self.time = QDateTime.currentDateTime()
         print(self.time.toString("yyyy-MM-dd hh:mm:ss"))
         self.ui.lcdNumber_2.display(self.time.toString("yyyy-MM-dd hh:mm:ss"))
+        self.ui.textBrowser.append(self.time.toString("yyyy-MM-dd hh:mm:ss"))
 
     def slot1(self):
         a = self.ui.comboBox.currentIndex()
-
         aliyun_realtime.query(a + 1)
 
 

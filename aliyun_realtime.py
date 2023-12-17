@@ -20,9 +20,7 @@ n_valu = 0  # valu
 
 
 def Realtime_data(ac, pp):
-    client = AcsClient(
-        "LTAI4FbnNz12HT85LUPbrFnU", "UdPN3kNhB8aVJvrrbfIyng5sHupNpA", "cn-shanghai"
-    )
+    client = AcsClient("LTAI4FbnNz12HT85LUPbrFnU", "UdPN3kNhB8aVJvrrbfIyng5sHupNpA", "cn-shanghai")
 
     request = QueryDevicePropertyStatusRequest()
     request.set_accept_format("json")
@@ -71,8 +69,10 @@ def Realtime_data(ac, pp):
     return au
 
     # if __name__ == '__main__':
+
+
 def query(li):
-        # 选择要查询的区域
+    # 选择要查询的区域
     print(
         "查询郑庄采油队张台项目区请输入1",
         "\n",
@@ -84,10 +84,12 @@ def query(li):
     )
     # li = input("请选择要查询的区域：")
     print(li)
+
     # 初始化表格
     title1 = datetime.datetime.now().strftime("%m%d%H%M%S")
     str_time = "TL" + str(title1)  # 拼接新建表名
     print("创建", str_time, "表格成功")
+
     # shell = openpyxl.Workbook()
     shell = openpyxl.load_workbook("实时数据.xlsx")
     b1 = shell.create_sheet(str_time, 0)
@@ -654,21 +656,15 @@ def query(li):
                 if cp[r - 2] == "Distance":  # 对Distance的值操作
                     if n_Distance > 80:
                         print("罐存过高，请及时组织泵出")
-                        red_fill = openpyxl.styles.PatternFill(
-                            "solid", fgColor="1AFD9C"
-                        )
+                        red_fill = openpyxl.styles.PatternFill("solid", fgColor="1AFD9C")
                         b1.cell(k + 2, r - 1).fill = red_fill
                         if n_Distance > 150:
                             print("传感器异常")
-                            red_fill = openpyxl.styles.PatternFill(
-                                "solid", fgColor="FF5809"
-                            )
+                            red_fill = openpyxl.styles.PatternFill("solid", fgColor="FF5809")
                             b1.cell(k + 2, r - 1).fill = red_fill
                     elif n_Distance < 0:
                         print("传感器异常")
-                        red_fill = openpyxl.styles.PatternFill(
-                            "solid", fgColor="FF5809"
-                        )
+                        red_fill = openpyxl.styles.PatternFill("solid", fgColor="FF5809")
                         b1.cell(k + 2, r - 1).fill = red_fill
                 b1.cell(row=k + 2, column=r - 1, value=n_Distance)
             elif cp[r - 2] == "amp":  # 对amp的值操作
@@ -686,9 +682,7 @@ def query(li):
                     if xiaojiu > 86400:  # 1153021   一天86400000毫秒
                         jiujiu = xiaojiu / 86400
                         print("\b", "设备", "{:.2f}".format(jiujiu), "天内未上线")
-                        red_fill = openpyxl.styles.PatternFill(
-                            "solid", fgColor="ff7575"
-                        )
+                        red_fill = openpyxl.styles.PatternFill("solid", fgColor="ff7575")
                         b1.cell(k + 2, r - 1).fill = red_fill
                     b1.cell(row=k + 2, column=r - 1, value=au[xp])
                 b1.cell(row=k + 2, column=r - 1, value=au[xp])
@@ -696,9 +690,7 @@ def query(li):
                 n_valu = float(au[xp])
                 if n_Distance == n_valu:
                     print("传感器异常")
-                    red_fill = openpyxl.styles.PatternFill(
-                        "solid", fgColor="FF5809"
-                    )
+                    red_fill = openpyxl.styles.PatternFill("solid", fgColor="FF5809")
                     b1.cell(k + 2, r - 1).fill = red_fill
                 b1.cell(row=k + 2, column=r - 1, value=n_valu)
     shet = shell.sheetnames  # 显示已存在表名，该对象为列表
